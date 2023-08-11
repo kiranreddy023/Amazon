@@ -4,6 +4,7 @@ pipeline{
     }
     tools{
         maven 'maven-3.6.3'
+        docker 'docker1'
     }
     stages{
         stage("unit test"){
