@@ -2,14 +2,16 @@ pipeline{
     agent {
         label "slave"
     }
+    tools{
+        maven 'maven-3.6.3'
+    }
     stages{
         stage("unit test"){
             steps{
                 sh "mvn clean test"
             }
         }
-    }
-    stages{
+
         stage("sonarqube build"){
             steps{
                 withSonarQubeEnv('kiransonarqube') {
