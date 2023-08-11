@@ -19,5 +19,10 @@ pipeline{
                 }
             }
         }
+        stage("docker build"){
+            steps{
+                sh "docker build -t kirandocker1994.azurecr.io/amazon:v1 ."
+            }
+        }
     }
 }
